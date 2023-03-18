@@ -9,6 +9,20 @@ def fetch_air_quality():
 #check our api connection
  if aqi is not None:
         air_quality_label.config(text=f'The AQI in {city} is {aqi}')
+        
+# Check if air quality is good or bad
+        if aqi < 50:
+            new_window = tk.Toplevel(root)
+            new_window.title("Air Quality is Good")
+            new_window.configure(bg='#4496D2')
+            label = tk.Label(new_window, text="The air quality is good!", font=("Arial Bold", 20))
+            label.pack(padx=50, pady=50)
+        else:
+            new_window = tk.Toplevel(root)
+            new_window.title("Air Quality is Bad")
+            new_window.configure(bg='#F2220F')
+            label = tk.Label(new_window, text="The air quality is bad! Make sure to wear a mask or other precaution!", font=("Arial Bold", 20))
+            label.pack(padx=50, pady=50)
     else:
         air_quality_label.config(text="No air quality data available or invalid input.")
 
