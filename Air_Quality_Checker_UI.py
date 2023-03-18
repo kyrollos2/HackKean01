@@ -16,7 +16,7 @@ def fetch_air_quality():
 root = tk.Tk()
 root.title("Air Quality Checker")
 
-frame = tk.Frame(root)
+frame = tk.Frame(root, bg='#D3D3D3')
 frame.pack(padx=20, pady=20)
 
 city_label = tk.Label(frame, text="Enter City:")
@@ -31,7 +31,7 @@ state_label.grid(row=1, column=0, padx=(0, 10), pady=(5, 0))
 state_entry = tk.Entry(frame)
 state_entry.grid(row=1, column=1, pady=(5, 0))
 
-check_button = tk.Button(frame, text="Check Air Quality", command=fetch_air_quality)
+check_button = tk.Button(frame, text="Check Air Quality", command=fetch_air_quality, bg='#6EA61B')
 check_button.grid(row=2, columnspan=2, pady=(10, 0))
 
 air_quality_label = tk.Label(frame, text="")
